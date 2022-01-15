@@ -55,7 +55,7 @@ simplify (Const 0 :/: _) = Const 0
 simplify (a :^: Const 1)               = simplify a
 simplify (_ :^: Const 0)               = Const 1
 simplify (a :/: Const 1) = simplify a
-simplify (_ :/: Const 0) = error "Jeeze Man, Watch Out! You're Dividing By A Zero!"
+simplify (_ :/: Const 0) = error "Jeeze, Watch Out! You're Dividing By A Zero!"
 simplify ((a :*: b) :/: (c :*: d)) | a == c = simplify (b :/: d)
                                    | a == d = simplify (b :/: c)
                                    | b == c = simplify (a :/: d)
